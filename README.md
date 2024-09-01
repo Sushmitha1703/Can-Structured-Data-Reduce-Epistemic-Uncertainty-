@@ -1,4 +1,4 @@
-**Structure-is-All-You-Need**
+**Can Structured Data Reduce Epistemic Uncertainty?**
 In this research work we propose a way to reduce uncertainty in AI models by using structured data and ontologies. Traditional AI models often rely on probability, which can create uncertainty and make it hard for them to reason like humans. To solve this, we use ontologies—structured networks that organize data and to improve the model's reasoning skills. We also explore a novel approach using ontologies to aid RAGs and overcome hallucinations that is often faced by LLMs.
 
 
