@@ -15,7 +15,7 @@ We then compare across both the pre-trained model and the model trained with ont
 same model parameters θ. With qualitative and quantitative results our idea is to define a new Machine Intelligence hypothesis to show how important structured data is for a model. We therby propose our hypothesis : 
 _"Consider two models α and β. Let model α be an extremely fine-tuned model with additional ability acquired through structured data and model β be the native version of model α. Both the models are bound to reach an optimal accuracy state S provided the models run for an arbitrary number of epochs ε. The factor deciding the better model in such a case would be the rate ρ at which a model reaches such an S. "_
 
-Figure below shows the the accuracies of extremely fine-tuned and native model versions of both BioClinical BERT and bert-base-uncased-yelp-polarity models. Analyzing the accuracy after every epoch, it can be inferred that the rate of learning of the model trained through ontology alignment is much higher:
+Figure below shows the the accuracies of extremely fine-tuned and native model versions of BioClinical BERT models. Analyzing the accuracy after every epoch, it can be inferred that the rate of learning of the model trained through ontology alignment is much higher. Similar results were obtained with bert-base-uncased-yelp-polarity model as well:
 
 ![image](https://github.com/user-attachments/assets/2468e697-c5ab-4d58-b61f-5c291eeb150e)
 
