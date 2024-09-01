@@ -19,6 +19,7 @@ Figure below shows the the accuracies of extremely fine-tuned and native model v
 
 ![image](https://github.com/user-attachments/assets/2468e697-c5ab-4d58-b61f-5c291eeb150e)
 
-Finally, we explore how the relationships between concepts (where one concept is a subset of another) from the ontology alignment can improve AI systems like chatbots (LLMs). By adding these relationships to the prompts given to the model, we help it retrieve more relevant information, leading to better and more accurate responses. This makes chatbots smarter and easier to use without needing extra input from users.
+
+Finally, we explore how the relationships between concepts (where one concept is a subset of another) from the ontology alignment can improve AI systems like chatbots (LLMs). When a user provides a prompt, we identify any relevant concepts from the ontology and check if there are subsumption relationships—where one concept includes another. We then add these related concepts to the prompt, giving the model more context to work with. This helps the model retrieve more relevant information and provide better, more accurate responses. This process makes chatbots smarter and easier to use, as it reduces the need for users to manually add extra context to their prompts.
 
 This research work has been selected for KR conference workshop which will be held on November 4th 2024 at Hanoi, Vietnam
