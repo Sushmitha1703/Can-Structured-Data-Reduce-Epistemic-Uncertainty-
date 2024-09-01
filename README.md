@@ -2,27 +2,34 @@
 # Can Structured Data Reduce Epistemic Uncertainty? 
 This repository contains the work related to the paper titled **Can Structured Data Reduce Epistemic Uncertainty?** which has been selected for presentation at *Next-Generation Language Models for Knowledge Representation and Reasoning* workshop, to be held at KR 2024 which will be held on November 4th 2024 at Hanoi, Vietnam.
 
-In this research work we propose a way to reduce uncertainty in AI models by using structured data and ontologies. Traditional AI models often rely on probability, which can create uncertainty and make it hard for them to reason like humans. This uncertainty is of 2 types, epistemic (EU) and aleatoric (AU), where the former is also called reducible uncertainty, caused due to the lack of knowledge of a model and the latter arises due to randomness. In this work we aim to show that ontology can be used as a means to reduce epistemic uncertainty in LLMs, wherein we show how additional knowledge acquired through the structural format of an ontology reduces EU. For this, we use ontologies—structured networks that organize data and improve the model's reasoning skills. We also explore a novel approach using ontologies to aid RAGs and overcome hallucinations that is often faced by LLMs.
-
+## Goal of this work
+This work aims to demonstrate: 
+- How ontologies can be used to fine-tune language models, that are usually reliant on large amount of data. We show such a fine-tuning process makes the model learn at a higher rate, hence reducing epistemic uncertainty.
+- How subsumption mappings obtained through ontology alignment can be used to aid RAGs and reduce hallucination that is often faced by LLMs. 
 
 _Note: For our research purpose we have taken medical domain as our use case, the ontologies used are The Symptoms ontology and CSSO-Clinical Signs and Symptoms Ontology and the dataset used for classification is MedQandA benchmark dataset. We have experimented with both BioClinical BERT as well as bert-base-uncased-yelp-polarity._
 
 
-**Architecture Diagram of proposed system**:
+## Architecture Diagram of proposed system
 ![image](https://github.com/user-attachments/assets/eec5eab6-859a-44d2-b871-2f827ab4d496)
 
-
-First, we use a pre-trained BERT model to match similar concepts across different ontologies. This process, called ontology alignment, helps the model better understand the relationships between different ideas, making it more accurate and faster at learning compared to a regular model. This is considered as a synonyms classification task where we check if class c in ontology O and class c ′ in ontology O′ are synonymous to each other. We let a pre-trained BERT model, which is essentially a model that is trained to perform sequential classification, predict if a particular class pair is synonymous or not. We then show how this improved model can be used for tasks that involve classifying sequences of data, demonstrating that it reaches high accuracy faster than a standard model. For our experimentation, we make use of the **DeepOnto framework** while aligning ontologies. DeepOnto is a Python package developed specifically for ontology engineering. It offers various tools for ontology reasoning, verbalization,normalization, and projection. It also supports ontology alignment as well as the completion of tasks using pre-trained LLMs. 
-
-We then compare across both the pre-trained model and the model trained with ontologies, herewith referred to as the extremely fine-tuned model, named so due to the mode of data provided to fine-tune. We train the models over the same dataset to check how well and quickly the models are able to capture dependencies during training with the 
-same model parameters θ. With qualitative and quantitative results our idea is to define a new Machine Intelligence hypothesis to show how important structured data is for a model. We thereby propose our hypothesis : 
+## Our hypothesis 
 _"Consider two models α and β. Let model α be an extremely fine-tuned model with additional ability acquired through structured data and model β be the native version of model α. Both the models are bound to reach an optimal accuracy state S provided the models run for an arbitrary number of epochs ε. The factor deciding the better model in such a case would be the rate ρ at which a model reaches such an S. "_
 
+## List of contents in this repo
+- **BERTMap**: Used to align two ontologies and extract the corresponding equivalence mappings.
+- **BERTSub**: Used to retrieve subsumptions between to ontologies.
+- **BioClinical BERT Classification**: Classification using BioClinical BERT, fine-tuned on an ontology alignment task.
+- **bert-base-uncased-yelp-polarity Classification**: Classification using bert-base-uncased-yelp-polarity, fine-tuned on an ontology alignment task.
+- **Generative Language Model using RAG**: Proposed method for enhancing RAG with subsumption mappings. The subsumptions are infiltrated to the prompt of the model. _Note: This is just an example of codebase for this module._
+
+## Acknowledgement 
+For our experimentation, we make use of the **DeepOnto framework** while aligning ontologies. DeepOnto is a Python package developed specifically for ontology engineering. It offers various tools for ontology reasoning, verbalization,normalization, and projection. It also supports ontology alignment as well as the completion of tasks using pre-trained LLMs. 
+
+
+## Results
 Figure below shows the the accuracies of extremely fine-tuned and native model versions of BioClinical BERT models. Analyzing the accuracy after every epoch, it can be inferred that the rate of learning of the model trained through ontology alignment is much higher. Similar results were obtained with bert-base-uncased-yelp-polarity model as well:
 
 ![image](https://github.com/user-attachments/assets/2468e697-c5ab-4d58-b61f-5c291eeb150e)
 
-
-Finally, we explore how the relationships between concepts (where one concept is a subset of another) from the ontology alignment can improve AI systems like chatbots (LLMs). When a user provides a prompt, we identify any relevant concepts from the ontology and check if there are subsumption relationships—where one concept includes another. We then add these related concepts to the prompt, giving the model more context to work with. This helps the model retrieve more relevant information and provide better, more accurate responses. This process makes chatbots smarter and easier to use, as it reduces the need for users to manually add extra context to their prompts.
-
-This research work has been selected for KR conference workshop which will be held on November 4th 2024 at Hanoi, Vietnam
+More results available in our paper that is to be out soon!
