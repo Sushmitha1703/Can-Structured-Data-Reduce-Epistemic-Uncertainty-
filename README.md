@@ -1,4 +1,7 @@
-**Can Structured Data Reduce Epistemic Uncertainty?**
+
+# Can Structured Data Reduce Epistemic Uncertainty? 
+This repository contains the work related to the paper titled **Can Structured Data Reduce Epistemic Uncertainty?** which has been selected for presentation at *Next-Generation Language Models for Knowledge Representation and Reasoning* workshop, to be held at KR 2024 which will be held on November 4th 2024 at Hanoi, Vietnam.
+
 In this research work we propose a way to reduce uncertainty in AI models by using structured data and ontologies. Traditional AI models often rely on probability, which can create uncertainty and make it hard for them to reason like humans. This uncertainty is of 2 types, epistemic (EU) and aleatoric (AU), where the former is also called reducible uncertainty, caused due to the lack of knowledge of a model and the latter arises due to randomness. In this work we aim to show that ontology can be used as a means to reduce epistemic uncertainty in LLMs, wherein we show how additional knowledge acquired through the structural format of an ontology reduces EU. For this, we use ontologies—structured networks that organize data and improve the model's reasoning skills. We also explore a novel approach using ontologies to aid RAGs and overcome hallucinations that is often faced by LLMs.
 
 
