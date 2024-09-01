@@ -1,4 +1,4 @@
-**# Structiure-is-All-You-Need**
+**Structiure-is-All-You-Need**
 In this research work we propose a way to reduce uncertainty in AI models by using structured data and ontologies. Traditional AI models often rely on probability, which can create uncertainty and make it hard for them to reason like humans. To solve this, we use ontologies—structured networks that organize data and to improve the model's reasoning skills. We also explore a novel approach using ontologies to aid RAGs and overcome hallucinations that is often faced by LLMs. 
 
 
@@ -17,3 +17,5 @@ same model parameters θ. With qualitative and quantitative results our idea is 
 **
 
 Finally, we explore how the relationships between concepts (where one concept is a subset of another) from the ontology alignment can improve AI systems like chatbots (LLMs). By adding these relationships to the prompts given to the model, we help it retrieve more relevant information, leading to better and more accurate responses. This makes chatbots smarter and easier to use without needing extra input from users.
+
+This research work has been selected for KR conference workshop which will be held on November 4th at Hanoi, Vietnam
